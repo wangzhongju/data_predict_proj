@@ -1,0 +1,52 @@
+
+
+construction_file: /workspace/data/gongdi.xlsx
+disposal_file: /workspace/data/xiaona.xlsx
+weather_file: /workspace/data/weather_2023_2024.csv
+font_file: /workspace/config/simhei.ttf
+output_file: /workspace/data/res.xlsx
+
+
+train_model: False
+epochs: 500
+lr: 0.001
+model_path: /workspace/model/
+
+construction_sites:
+  高新区西永组团F分区F03地块项目: 20000
+  高新区西永组团Z分区Z46地块项目: 6200
+  寨山坪生态居住小区三期: 26500
+  科学田园项目中梁山片区新店村示范区建渣清理工程: 56000
+  西科四路工程: 12000
+  曾家“科研港”片区一路网工程: 840000
+
+disposal_sites:
+  花都湖土地整治项目: 1300000
+  玉龙二号消纳场: 5000000
+  仓储基地土地整治工程: 2000000
+  新州大道路基平场项目: 3000
+  巴福大健康片区整治: 910000
+  胡家沟二号（1号口）: 5000000
+  # 玉龙二号消纳场: 3000000   # 数据总量不符合实际消纳
+  # 胡家沟二号（1号口）: 3000000  # 数据总量不符合实际消纳
+
+
+
+# 默认配置
+freq: 'D'                     # 'W' 按周统计， 'D'按天统计
+forecast_periods: 28          # 默认周期，注意此处应该对应 freq 单位
+
+construction_name:
+  高新区西永组团F分区F03地块项目: {}
+  高新区西永组团Z分区Z46地块项目: {}
+  寨山坪生态居住小区三期: {}
+  科学田园项目中梁山片区新店村示范区建渣清理工程: {}
+  西科四路工程: {}
+
+disposal_name:
+  花都湖土地整治项目: {}
+  玉龙二号消纳场: {}
+  仓储基地土地整治工程: {}
+  新州大道路基平场项目: {}
+  巴福大健康片区整治: {}
+  胡家沟二号（1号口）: {}

@@ -1,0 +1,32 @@
+version: '3.5'
+services:
+  ros2-root:      
+    image: harbor.cmat.com:8085/imbr/cmat-imbr-algorithm:1.0.0
+    container_name: cmat-imbr-algorithm
+    hostname: in-dev-docker
+    restart: always
+    pid: host
+    network_mode: host
+    stdin_open: true
+    tty: true
+    privileged: true
+    working_dir: /workspace
+    environment:
+      DISPLAY: :0
+      DOCKER_USER: $DOCKER_USERS
+      USER: $DOCKER_USERS
+      DOCKER_USER_ID: $USER_ID
+      DOCKER_GRP: $DOCKER_USERS
+      DOCKER_GRP_ID: $GROUP_ID
+      USE_GPU_HOST: 0
+      NVIDIA_VISIBLE_DEVICES: all
+      HISTFILE: /workspace/.dev_bash_history
+    extra_hosts:
+      - in-dev-docker:127.0.0.1
+    volumes:
+      - /dev/null:/dev/raw1394
+      - /dev:/dev
+      - /media:/media
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /etc/localtime:/etc/localtime:ro
+      - ${WORKSPACE_PATH}:/workspace
